@@ -1,5 +1,5 @@
 {% set name = "rdkit_utilities" %}
-{% set version = "0.2.0" %}
+{% set version = "0.2.1" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/rdkit_utilities-{{ version }}.tar.gz
-  sha256: 985ded43dacf8cc23be15a9883366e0bacdbcf7b2e063be74dc870f360e6707c
+  sha256: 257a2686c4e0e4c71b3c2da075ab96d6381b2a196b91ed0ffb7d60084e481129
 
 build:
   noarch: python
