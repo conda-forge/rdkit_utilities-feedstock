@@ -6,21 +6,21 @@ package:
   version: {{ version }}
 
 source:
-  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/rdkit_utilities-{{ version }}.tar.gz
+  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/rdkit_utilities-{{ version }}.tar.gz
   sha256: 257a2686c4e0e4c71b3c2da075ab96d6381b2a196b91ed0ffb7d60084e481129
 
 build:
   noarch: python
   script: {{ PYTHON }} -m pip install . -vv
-  number: 0
+  number: 1
 
 requirements:
   host:
     - pip
-    - python >=3.7
+    - python {{ python_min }}
   run:
     - numpy
-    - python >=3.7
+    - python >={{ python_min }}
     - typing_extensions
     - rdkit
 
@@ -31,6 +31,7 @@ test:
     - pip check
   requires:
     - pip
+    - python {{ python_min }}
 
 about:
   home: https://pypi.org/project/rdkit-utilities/
